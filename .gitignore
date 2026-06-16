@@ -8,7 +8,5 @@ build/
 .pytest_cache/
 .mypy_cache/
 *.onnx
-*.wav
-*.mp3
 .idea/
 .vscode/

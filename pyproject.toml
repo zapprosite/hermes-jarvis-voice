@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "hermes-jarvis-voice"
 version = "1.0.0"
-description = "Jarvis-like voice stack (OWW + STT + LLM + TTS) para hermes-agent"
+description = "Voice stack (wake + STT + LLM + TTS + voice loop + persona) para hermes-agent"
 readme = "README.md"
 requires-python = ">=3.11,<3.14"
 authors = [{ name = "Will Zapprosite" }]
@@ -23,13 +23,6 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-voice = [
-  "faster-whisper>=1.0.0",
-  "openwakeword>=0.6.0",
-  "torch>=2.1",
-  "sounddevice>=0.4.6",
-  "numpy>=1.26",
-]
 dev = [
   "pytest>=9.0",
   "pytest-asyncio>=0.23",
@@ -38,7 +31,7 @@ dev = [
 ]
 
 [project.entry-points."hermes_agent.plugins"]
-jarvis_voice = "jarvis_voice.plugin:VoicePlugin"
+hermes_jarvis_voice = "hermes_jarvis_voice.plugin:jarvisvoicePlugin"
 
 [tool.setuptools.packages.find]
 where = ["src"]
